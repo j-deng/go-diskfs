@@ -563,8 +563,6 @@ func validateFilename(s string, isDir bool) error {
 		switch {
 		case !re.MatchString(s):
 			err = fmt.Errorf("file name must be of characters from A-Z0-9_, followed by an optional '.' and an extension of the same characters")
-		case len(strings.ReplaceAll(s, ".", "")) > 30:
-			err = fmt.Errorf("file name must be at most 30 characters, not including the separator '.'")
 		}
 	}
 	return err
